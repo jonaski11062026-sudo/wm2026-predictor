@@ -2,7 +2,7 @@ const STORAGE_KEY = "wm2026-predictor-state-v1";
 
 function defaultState() {
   return {
-    rankings: Object.fromEntries(GROUPS.map((group) => [group.id, [...group.teams]])),
+    rankings: Object.fromEntries(GROUPS.map((group) => [group.id, ["", "", "", ""]])),
     selectedThirds: [],
     winners: {},
     theme: "light"
