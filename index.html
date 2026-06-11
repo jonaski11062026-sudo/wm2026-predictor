@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WM 2026 Predictor</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">FIFA World Cup 2026</p>
+        <h1>WM 2026 Predictor</h1>
+      </div>
+      <div class="toolbar">
+        <button id="themeToggle" type="button" title="Dunkelmodus umschalten">◐</button>
+        <button id="exportBtn" type="button">Export</button>
+        <label class="import-button">
+          Import
+          <input id="importInput" type="file" accept="application/json">
+        </label>
+        <button id="resetBtn" type="button" class="danger">Reset</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel groups-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Phase 1</p>
+            <h2>Gruppen A-L</h2>
+          </div>
+          <span id="groupStatus" class="status-pill">0/12 komplett</span>
+        </div>
+        <div id="groups" class="groups-grid"></div>
+      </section>
+
+      <section class="panel thirds-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Phase 2</p>
+            <h2>Beste Drittplatzierte</h2>
+          </div>
+          <span id="thirdStatus" class="status-pill">0/8 gewählt</span>
+        </div>
+        <p class="helper">Wähle genau acht Drittplatzierte. Diese Teams werden automatisch in die passenden K.o.-Slots verteilt.</p>
+        <div id="thirds" class="third-list"></div>
+      </section>
+
+      <section class="panel bracket-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Phase 3</p>
+            <h2>Turnierbaum</h2>
+          </div>
+          <span id="championBadge" class="status-pill accent">Weltmeister offen</span>
+        </div>
+        <div id="bracket" class="bracket"></div>
+      </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/groups.js"></script>
+    <script src="js/bracket.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
