@@ -1,4 +1,5 @@
 const STORAGE_KEY = "wm2026-predictor-state-v2";
+const LEGACY_STORAGE_KEYS = ["wm2026-predictor-state-v1"];
 
 function defaultState() {
   return {
@@ -23,6 +24,7 @@ function saveState(state) {
 }
 
 function resetState() {
+  LEGACY_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
   localStorage.removeItem(STORAGE_KEY);
   return defaultState();
 }
